@@ -2,7 +2,7 @@ function cargarYMostrarJSON(url) {
   fetch(url)
     .then(response => {
       if (!response.ok) {
-        throw new Error('Error al cargar el archivo JSON');
+        throw new Error('Error al carregar el fitxer JSON');
       }
       return response.json();
     })
