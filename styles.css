@@ -1,7 +1,9 @@
+html{
+    background-color: yellow;
+}
 body {
     font-family: sans-serif;
     margin: 20px;
-    background-color: yellow;
 }
 
 .general {
@@ -11,12 +13,15 @@ body {
 
 h1 {
     text-align: center;
+    color: rgb(0, 0, 124);
 }
 
 h2 {
     margin-top: 20px;
+    color: rgb(119, 0, 0);
 }
 
 p {
     margin: 5px 0;
+    color: rgb(0, 94, 0);
 }
