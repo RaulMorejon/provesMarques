@@ -8,21 +8,16 @@ function cargarYMostrarJSON(url) {
     })
     .then(data => {
       console.log(data);
-
       const container = document.getElementById('json-container');
-      container.innerHTML = ''; // Limpiar el contenedor
+      const pre = document.createElement('pre');
 
-      const variables = data[0].versio.variables; // Ajusta según tu JSON
-
-      // Convertir el objeto JSON a una lista de "clave: valor" sin {}
-      let contenido = Object.entries(variables)
-        .map(([key, value]) => `<strong>${key}:</strong> ${value}`)
-        .join('<br>');
-
-      container.innerHTML = contenido; // Insertar en el HTML
-
-      console.log(variables);
-    })
+      pre.textContent = JSON.stringify(data[0].versio.variables, null, 2).replace(/[\{\}]/g, '');
+      container.innerHTML = ''; 
+      container.appendChild(pre);
+    
+      console.log(data[0].versio.variables);
+  
+    }) 
     .catch(error => {
       console.error('Error:', error);
     });
