@@ -8,12 +8,14 @@ function cargarYMostrarJSON(url) {
     })
     .then(data => {
       console.log(data);
-     
-      const info = data[1];
-      console.log(info.versio[2].variables);
+      const container = document.getElementById('json-container');
+      const pre = document.createElement('pre');
+      pre.textContent = JSON.stringify(data[0].versio.variables, null, 2);
+      container.innerHTML = ''; 
+      container.appendChild(pre);
+    
+      console.log(data[0].versio.variables);
   
-      
-      
     })
     .catch(error => {
       console.error('Error:', error);
