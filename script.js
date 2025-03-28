@@ -1,38 +1,29 @@
 function cargarYMostrarJSON(url) {
   fetch(url)
     .then(response => {
-      if (!response.ok) throw new Error('Error al carregar el arxiu JSON');
+      if (!response.ok) {
+        throw new Error('Error al cargar el archivo JSON');
+      }
       return response.json();
     })
     .then(data => {
       console.log(data);
-
-      const container = document.getElementById('json-container');
-      const pre = document.createElement('pre');
-
-      
-      // Verificar si el array principal tiene al menos un elemento
-      if (data && data.length > 0) {
-        // Obtener el primer elemento del array
-        const primerElemento = data[0];
-
-        // Verificar si el primer elemento tiene el campo "variables"
-        if (primerElemento && primerElemento.variables) {
-          // Mostrar solo el contenido del campo "variables"
-          pre.textContent = JSON.stringify(primerElemento.variables, null, 2);
-        } else {
-          pre.textContent = "No s'ha trobat el camp 'variables' al primer element.";
-        }
+      //Check if "variables" exist in the data
+      if (data.variables) {
+        // Get "variables"
+        const variables = data.variables;
+        // Show variables in console
+        console.log(variables);
+        // Now create the HTML for variables
+        const container = document.getElementById('json-container');
+        const pre = document.createElement('pre');
+        pre.textContent = JSON.stringify(variables, null, 2);
+        container.appendChild(pre);
       } else {
-        pre.textContent = "No s'han trobat dades al JSON.";
+          console.error("Error: 'variables' not found in JSON");
       }
-
-
-
-
-      container.appendChild(pre);
     })
-    .catch(error => { 
+    .catch(error => {
       console.error('Error:', error);
     });
 }
