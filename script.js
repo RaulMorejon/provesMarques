@@ -29,8 +29,8 @@ function cargarYMostrarJSON(url) {
 
       //Element 3
 
-      pre3.textContent = JSON.stringify(data[2].versio.variables, null, 2);
       const pre3 = document.createElement('pre');
+      pre3.textContent = JSON.stringify(data[2].versio.variables, null, 2);
       container3.appendChild(pre3);
     
     
