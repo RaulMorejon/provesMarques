@@ -12,10 +12,10 @@ function cargarYMostrarJSON(url) {
       const pre = document.createElement('pre');
 
       const container2 = document.getElementById('json-container2');
-      const pre2 = document.createElement('pre2');
+      const pre2 = document.createElement('pre');
 
       const container3 = document.getElementById('json-container3');
-      const pre3 = document.createElement('pre3');
+      const pre3 = document.createElement('pre');
 
 
       container.innerHTML = ''; 
