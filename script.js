@@ -14,7 +14,7 @@ function cargarYMostrarJSON(url) {
       container.innerHTML = '';  
       container2.innerHTML = ''; 
       container3.innerHTML = ''; 
-
+ 
       //Element 1
 
       const pre = document.createElement('pre');
