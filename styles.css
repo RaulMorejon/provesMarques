@@ -10,7 +10,6 @@ body {
     max-width: 800px;
     margin: 0 auto;
 }
-
 h1 {
     text-align: center;
     color: rgb(0, 0, 124);
@@ -22,6 +21,6 @@ h2 {
 }
 
 p {
-    margin: 5px 0;
+    margin: 5px 0; 
     color: rgb(0, 94, 0);
 }
