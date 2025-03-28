@@ -10,7 +10,7 @@ function cargarYMostrarJSON(url) {
       console.log(data);
      
       const info = data[1];
-      console.log(info.versio.variables);
+      console.log(info.versio[2].variables);
   
       
       
