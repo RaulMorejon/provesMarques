@@ -9,22 +9,30 @@ function cargarYMostrarJSON(url) {
     .then(data => {
       console.log(data);
       const container = document.getElementById('json-container');
-      container.innerHTML = ''; 
       const pre = document.createElement('pre');
 
+      const container2 = document.getElementById('json-container2');
+      const pre2 = document.createElement('pre2');
 
-      let contenido = data.map((item, index) => 
-        `Elemento ${index + 1}:\n` + JSON.stringify(item.versio.variables, null, 2)
-      ).join('\n\n');
+      const container3 = document.getElementById('json-container3');
+      const pre3 = document.createElement('pre3');
 
-      pre.textContent = contenido;
-     
 
+      container.innerHTML = ''; 
+
+      
+      pre.textContent = JSON.stringify(data[0].versio.variables, null, 2).
+      pre2.textContent = JSON.stringify(data[1].versio.variables, null, 2).
+      pre3.textContent = JSON.stringify(data[2].versio.variables, null, 2).
+      
 
 
       container.appendChild(pre);
+      container.appendChild(pre2);
+      container.appendChild(pre3);
     
       
+  
     }) 
     .catch(error => {
       console.error('Error:', error);
