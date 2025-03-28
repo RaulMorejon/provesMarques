@@ -8,20 +8,12 @@ function cargarYMostrarJSON(url) {
     })
     .then(data => {
       console.log(data);
-      //Check if "variables" exist in the data
-      if (data.variables) {
-        // Get "variables"
-        const variables = data.variables;
-        // Show variables in console
-        console.log(variables);
-        // Now create the HTML for variables
-        const container = document.getElementById('json-container');
-        const pre = document.createElement('pre');
-        pre.textContent = JSON.stringify(variables, null, 2);
-        container.appendChild(pre);
-      } else {
-          console.error("Error: 'variables' not found in JSON");
-      }
+     
+      const info = data[1];
+      console.log(info.versio.variables);
+  
+      
+      
     })
     .catch(error => {
       console.error('Error:', error);
